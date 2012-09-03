@@ -36,10 +36,17 @@
 }
 
 body {
+	margin: 0px 0px 0px 0px;
+	padding: 0px 0px 0px 0px;
     background-color: #2d2d2d;
     color: #f0f0f0;
     font-family: Arial, Helvetica, "sans serif";
     text-align: center;
+    user-select: none;
+    -o-user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
 }
 
 #content {
@@ -59,12 +66,12 @@ body {
 .logo {
     background: transparent url(../images/logotype.png) no-repeat;
     height: 40px;
-    margin: 22px auto 66px auto;
+    margin: 28px auto 0px auto;
     width: 102px;
 }
 
 .counter {
-    margin: 0px auto 0px auto;
+    margin: 74px auto 48px auto;
     text-align: center;
     width: 296px;
 }
@@ -86,15 +93,107 @@ body {
 .counter .time .label {
     font-family: Arial;
     font-size: 10px;
+    color: #c0c0c0;
+}
+
+.stroke {
+	width: 320px;
+	height: 240px;
+	margin: 24px auto 24px auto;
+	background: transparent none no-repeat;
+}
+
+.stroke.stroke-1 {
+	background-image: url(../images/stroke_1.png);
+}
+
+.stroke.stroke-2 {
+	background-image: url(../images/stroke_2.png);
+}
+
+.stroke.stroke-3 {
+	background-image: url(../images/stroke_3.png);
+}
+
+.stroke.stroke-4 {
+	background-image: url(../images/stroke_4.png);
+}
+
+.stroke.stroke-5 {
+	background-image: url(../images/stroke_5.png);
 }
 
 .share {
     background: transparent url(../images/share.png) no-repeat;
     height: 80px;
-    margin: 48px auto 96px auto;
+    margin: 0px auto 84px auto;
     width: 80px;
 }
 
 .share.click {
     background-position: 0px -80px;
+}
+
+.list.list-messages {
+	margin: 0px 0px 0px 0px;
+	padding: 0px 0px 0px 0px;
+	list-style: none;
+}
+
+.list.list-messages li {
+	text-align: left;
+	font-size: 14px;
+	padding: 16px 8px 16px 8px;
+	border-top: 1px solid #666666;
+	border-bottom: 1px solid #1d1d1d;
+	background: transparent url(../images/arrow-right.png) no-repeat right center;
+	cursor: pointer;
+}
+
+.list.list-messages li:hover {
+	background-color: #4d4d4d;
+}
+
+.list.list-messages li.click {
+	background-color: #4d4d4d;
+}
+
+.list.list-messages li:first-child {
+	border-top: 1px solid transparent;
+}
+
+.list.list-messages li:last-child {
+	border-bottom: 1px solid transparent;
+}
+
+.modal {
+	border: 1px solid #666666;
+	width: 240px;
+	height: 64x;
+	margin: 0px auto 0px auto;
+	background-color: #4d4d4d;
+	position: absolute;
+}
+
+.modal.services {
+	height: 64px;
+}
+
+.service {
+	height: 64px;
+	width: 50%;
+	float: left;
+	background: transparent none no-repeat center center;
+}
+
+.service.click {
+	background-color: #2d2d2d;
+}
+
+.service.twitter {
+	background-image: url(../images/twitter.png);
+}
+
+.service.facebook {
+	background-image: url(../images/facebook.png);
 }

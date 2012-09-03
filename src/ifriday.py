@@ -46,9 +46,26 @@ app = flask.Flask(__name__)
 @app.route("/index", methods = ("GET",))
 def index():
     return flask.render_template(
-        "index.html.tpl",
-        link = "home"
+        "index.html.tpl"
     )
+
+@app.route("/share", methods = ("GET",))
+def share():
+    return flask.render_template(
+        "share.html.tpl"
+    )
+
+@app.errorhandler(404)
+def handler_404(error):
+    return str(error)
+
+@app.errorhandler(413)
+def handler_413(error):
+    return str(error)
+
+@app.errorhandler(BaseException)
+def handler_exception(error):
+    return str(error)
 
 def run():
     # sets the debug control in the application

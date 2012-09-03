@@ -36,11 +36,11 @@
 }
 
 body {
-	margin: 0px 0px 0px 0px;
-	padding: 0px 0px 0px 0px;
     background-color: #2d2d2d;
     color: #f0f0f0;
     font-family: Arial, Helvetica, "sans serif";
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
     text-align: center;
     user-select: none;
     -o-user-select: none;
@@ -59,6 +59,16 @@ body {
     margin: 24px auto 24px auto;
 }
 
+.overlay {
+    background-color: #1d1d1d;
+    opacity: 0.6;
+    z-index: 20;
+}
+
+.window {
+    z-index: 30;
+}
+
 .clear {
     clear: both;
 }
@@ -71,7 +81,8 @@ body {
 }
 
 .counter {
-    margin: 74px auto 48px auto;
+    cursor: pointer;
+    margin: 106px auto 82px auto;
     text-align: center;
     width: 296px;
 }
@@ -91,42 +102,44 @@ body {
 }
 
 .counter .time .label {
+    color: #c0c0c0;
     font-family: Arial;
     font-size: 10px;
-    color: #c0c0c0;
 }
 
 .stroke {
-	width: 320px;
-	height: 240px;
-	margin: 24px auto 24px auto;
-	background: transparent none no-repeat;
+    background: transparent none no-repeat;
+    cursor: pointer;
+    display: none;
+    height: 240px;
+    margin: 24px auto 24px auto;
+    width: 320px;
 }
 
 .stroke.stroke-1 {
-	background-image: url(../images/stroke_1.png);
+    background-image: url(../images/stroke_1.png);
 }
 
 .stroke.stroke-2 {
-	background-image: url(../images/stroke_2.png);
+    background-image: url(../images/stroke_2.png);
 }
 
 .stroke.stroke-3 {
-	background-image: url(../images/stroke_3.png);
+    background-image: url(../images/stroke_3.png);
 }
 
 .stroke.stroke-4 {
-	background-image: url(../images/stroke_4.png);
+    background-image: url(../images/stroke_4.png);
 }
 
 .stroke.stroke-5 {
-	background-image: url(../images/stroke_5.png);
+    background-image: url(../images/stroke_5.png);
 }
 
 .share {
     background: transparent url(../images/share.png) no-repeat;
     height: 80px;
-    margin: 0px auto 84px auto;
+    margin: 0px auto 42px auto;
     width: 80px;
 }
 
@@ -135,65 +148,69 @@ body {
 }
 
 .list.list-messages {
-	margin: 0px 0px 0px 0px;
-	padding: 0px 0px 0px 0px;
-	list-style: none;
+    list-style: none;
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
 }
 
 .list.list-messages li {
-	text-align: left;
-	font-size: 14px;
-	padding: 16px 8px 16px 8px;
-	border-top: 1px solid #666666;
-	border-bottom: 1px solid #1d1d1d;
-	background: transparent url(../images/arrow-right.png) no-repeat right center;
-	cursor: pointer;
+    background: transparent url(../images/arrow-right.png) no-repeat right center;
+    border-bottom: 1px solid #1d1d1d;
+    border-top: 1px solid #666666;
+    cursor: pointer;
+    font-size: 14px;
+    padding: 16px 8px 16px 8px;
+    text-align: left;
 }
 
 .list.list-messages li:hover {
-	background-color: #4d4d4d;
+    background-color: #4d4d4d;
 }
 
 .list.list-messages li.click {
-	background-color: #4d4d4d;
+    background-color: #4d4d4d;
 }
 
 .list.list-messages li:first-child {
-	border-top: 1px solid transparent;
+    border-top: 1px solid transparent;
 }
 
 .list.list-messages li:last-child {
-	border-bottom: 1px solid transparent;
+    border-bottom: 1px solid transparent;
 }
 
 .modal {
-	border: 1px solid #666666;
-	width: 240px;
-	height: 64x;
-	margin: 0px auto 0px auto;
-	background-color: #4d4d4d;
-	position: absolute;
+    background-color: #4d4d4d;
+    border: 1px solid #888888;
+    height: 64x;
+    margin: 0px auto 0px auto;
+    position: absolute;
+    width: 180px;
 }
 
 .modal.services {
-	height: 64px;
+    height: 64px;
 }
 
 .service {
-	height: 64px;
-	width: 50%;
-	float: left;
-	background: transparent none no-repeat center center;
+    background: transparent none no-repeat center center;
+    float: left;
+    height: 64px;
+    width: 100%;
+}
+
+.service:hover {
+    background-color: #3d3d3d;
 }
 
 .service.click {
-	background-color: #2d2d2d;
+    background-color: #2d2d2d;
 }
 
 .service.twitter {
-	background-image: url(../images/twitter.png);
+    background-image: url(../images/twitter.png);
 }
 
 .service.facebook {
-	background-image: url(../images/facebook.png);
+    background-image: url(../images/facebook.png);
 }

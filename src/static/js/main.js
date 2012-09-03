@@ -24,4 +24,96 @@
 // __license__   = GNU General Public License (GPL), Version 3
 
 jQuery(document).ready(function() {
-        });
+
+    function nextFriday() {
+        var date = new Date();
+
+        switch (date.getDay()) {
+            case 0 :
+                date.setDate(date.getDate() + 5);
+                break;
+
+            case 1 :
+                date.setDate(date.getDate() + 4);
+                break;
+
+            case 2 :
+                date.setDate(date.getDate() + 3);
+                break;
+
+            case 3 :
+                date.setDate(date.getDate() + 2);
+                break;
+
+            case 4 :
+                date.setDate(date.getDate() + 1);
+                break;
+
+            case 6 :
+                date.setDate(date.getDate() + 6);
+                break;
+        }
+
+        return date;
+    }
+
+    setInterval(function() {
+                var friday = nextFriday();
+                friday.setHours(18);
+                friday.setMinutes(0);
+                friday.setSeconds(0);
+                friday.setMilliseconds(0);
+
+                var diff = friday - new Date();
+                var seconds = Math.floor((diff / 1000) % 60);
+                var minutes = Math.floor((diff / 60000) % 60);
+                var hours = Math.floor((diff / 3600000) % 24);
+                var days = Math.floor(diff / 86400000);
+
+                jQuery(".time.seconds .value").html(seconds);
+                jQuery(".time.minutes .value").html(minutes);
+                jQuery(".time.hours .value").html(hours);
+                jQuery(".time.days .value").html(days);
+
+                var stroke = jQuery(".stroke");
+                for (var index = 1; index < 7; index++) {
+                    stroke.removeClass("stroke-" + index);
+                }
+                stroke.addClass("stroke-" + days);
+            }, 250);
+
+    jQuery(".overlay").click(function() {
+                // hides the currently displayed windows
+                jQuery(".window").uxwindow("hide");
+            });
+
+    jQuery(".counter").click(function() {
+                jQuery(".counter").hide();
+                jQuery(".stroke").show();
+            });
+
+    jQuery(".stroke").click(function() {
+                jQuery(".stroke").hide();
+                jQuery(".counter").show();
+            });
+
+    jQuery(".list.list-messages li").click(function() {
+                // retrieves the current element and uses it to
+                // retrieve the associated message
+                var element = jQuery(this);
+                var message = element.html();
+
+                // sets (saves) the message in the body element
+                // and then shows the services modal window
+                jQuery("body").data("message", message);
+                jQuery(".modal.services").uxwindow("show");
+            });
+
+    jQuery(".service.twitter").click(function() {
+        // retrieves the currently set message and redirects
+        // the user agent to the twiter address for the message
+        var message = jQuery("body").data("message");
+        document.location = "https://twitter.com/intent/tweet?source=webclient&text="
+                + encodeURIComponent(message + " #ifriday");
+    });
+});

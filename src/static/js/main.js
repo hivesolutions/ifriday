@@ -24,64 +24,6 @@
 // __license__   = GNU General Public License (GPL), Version 3
 
 jQuery(document).ready(function() {
-
-    function nextFriday() {
-        var date = new Date();
-
-        switch (date.getDay()) {
-            case 0 :
-                date.setDate(date.getDate() + 5);
-                break;
-
-            case 1 :
-                date.setDate(date.getDate() + 4);
-                break;
-
-            case 2 :
-                date.setDate(date.getDate() + 3);
-                break;
-
-            case 3 :
-                date.setDate(date.getDate() + 2);
-                break;
-
-            case 4 :
-                date.setDate(date.getDate() + 1);
-                break;
-
-            case 6 :
-                date.setDate(date.getDate() + 6);
-                break;
-        }
-
-        return date;
-    }
-
-    setInterval(function() {
-                var friday = nextFriday();
-                friday.setHours(18);
-                friday.setMinutes(0);
-                friday.setSeconds(0);
-                friday.setMilliseconds(0);
-
-                var diff = friday - new Date();
-                var seconds = Math.floor((diff / 1000) % 60);
-                var minutes = Math.floor((diff / 60000) % 60);
-                var hours = Math.floor((diff / 3600000) % 24);
-                var days = Math.floor(diff / 86400000);
-
-                jQuery(".time.seconds .value").html(seconds);
-                jQuery(".time.minutes .value").html(minutes);
-                jQuery(".time.hours .value").html(hours);
-                jQuery(".time.days .value").html(days);
-
-                var stroke = jQuery(".stroke");
-                for (var index = 1; index < 7; index++) {
-                    stroke.removeClass("stroke-" + index);
-                }
-                stroke.addClass("stroke-" + days);
-            }, 250);
-
     jQuery(".overlay").click(function() {
                 // hides the currently displayed windows
                 jQuery(".window").uxwindow("hide");
@@ -116,4 +58,62 @@ jQuery(document).ready(function() {
         document.location = "https://twitter.com/intent/tweet?source=webclient&text="
                 + encodeURIComponent(message + " #ifriday");
     });
+
+    setInterval(function() {
+                var friday = nextFriday();
+                friday.setHours(18);
+                friday.setMinutes(0);
+                friday.setSeconds(0);
+                friday.setMilliseconds(0);
+
+                var diff = friday - new Date();
+                var seconds = Math.floor((diff / 1000) % 60);
+                var minutes = Math.floor((diff / 60000) % 60);
+                var hours = Math.floor((diff / 3600000) % 24);
+                var days = Math.floor(diff / 86400000);
+
+                jQuery(".time.seconds .value").html(seconds);
+                jQuery(".time.minutes .value").html(minutes);
+                jQuery(".time.hours .value").html(hours);
+                jQuery(".time.days .value").html(days);
+
+                var stroke = jQuery(".stroke");
+                for (var index = 1; index < 7; index++) {
+                    stroke.removeClass("stroke-" + index);
+                }
+                stroke.addClass("stroke-" + days);
+            }, 250);
 });
+
+function nextFriday() {
+    var friday = new Date();
+    var day = friday.getDay();
+
+    switch (day) {
+        case 0 :
+            friday.setDate(friday.getDate() + 5);
+            break;
+
+        case 1 :
+            friday.setDate(friday.getDate() + 4);
+            break;
+
+        case 2 :
+            friday.setDate(friday.getDate() + 3);
+            break;
+
+        case 3 :
+            friday.setDate(friday.getDate() + 2);
+            break;
+
+        case 4 :
+            friday.setDate(friday.getDate() + 1);
+            break;
+
+        case 6 :
+            friday.setDate(friday.getDate() + 6);
+            break;
+    }
+
+    return friday;
+}

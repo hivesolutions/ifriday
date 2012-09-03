@@ -29,9 +29,72 @@
  __license__   = GNU General Public License (GPL), Version 3
 */
 
+@font-face {
+    font-family: Franchise;
+    src: local("Franchise Bold"), local("Franchise-Bold"),  url(../fonts/franchiseb.ttf);
+    font-weight: bold;
+}
+
 body {
-    background-color: #000000;
-    color: #ffffff;
+    background-color: #2d2d2d;
+    color: #f0f0f0;
+    font-family: Arial, Helvetica, "sans serif";
+    text-align: center;
+}
+
+#content {
+    margin: 0px auto 0px auto;
+}
+
+#footer {
+    color: #c0c0c0;
+    font-size: 12px;
+    margin: 24px auto 24px auto;
+}
+
+.clear {
+    clear: both;
+}
+
+.logo {
+    background: transparent url(../images/logotype.png) no-repeat;
+    height: 40px;
+    margin: 22px auto 66px auto;
+    width: 102px;
+}
+
+.counter {
     margin: 0px auto 0px auto;
     text-align: center;
+    width: 296px;
+}
+
+.counter .time {
+    background: transparent url(../images/time-hole.png) no-repeat;
+    float: left;
+    height: 84px;
+    margin: 0px 2px 0px 2px;
+    padding: 8px 0px 8px 0px;
+    width: 66px;
+}
+
+.counter .time .value {
+    font-size: 42px;
+    font-weight: bold;
+}
+
+.counter .time .label {
+    font-family: Arial;
+    font-size: 10px;
+}
+
+.share {
+    background: transparent url(../images/share.png) no-repeat;
+    height: 80px;
+    margin: 48px auto 96px auto;
+    width: 80px;
+}
+
+.share.click {
+    background-position: 0px -80px;
 }

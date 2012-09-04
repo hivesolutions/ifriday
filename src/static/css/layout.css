@@ -35,20 +35,6 @@
     font-weight: bold;
 }
 
-body {
-    background-color: #2d2d2d;
-    color: #f0f0f0;
-    font-family: Arial, Helvetica, "sans serif";
-    margin: 0px 0px 0px 0px;
-    padding: 0px 0px 0px 0px;
-    text-align: center;
-    user-select: none;
-    -o-user-select: none;
-    -moz-user-select: none;
-    -khtml-user-select: none;
-    -webkit-user-select: none;
-}
-
 #content {
     margin: 0px auto 0px auto;
 }
@@ -63,6 +49,20 @@ body {
     background-color: #1d1d1d;
     opacity: 0.6;
     z-index: 20;
+}
+
+body {
+    background-color: #2d2d2d;
+    color: #f0f0f0;
+    font-family: Arial, Helvetica, "sans serif";
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+    text-align: center;
+    user-select: none;
+    -o-user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
 }
 
 .window {

@@ -70,3 +70,5 @@ def handler_exception(error):
 
 if __name__ == "__main__":
     quorum.run(server = "netius")
+else:
+    __path__ = []

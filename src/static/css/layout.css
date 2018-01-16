@@ -48,6 +48,11 @@ __license__   = Apache License, Version 2.0
 .overlay {
     background-color: #1d1d1d;
     opacity: 0.6;
+    -o-opacity: 0.6;
+    -ms-opacity: 0.6;
+    -moz-opacity: 0.6;
+    -khtml-opacity: 0.6;
+    -webkit-opacity: 0.6;
     z-index: 20;
 }
 
@@ -60,6 +65,7 @@ body {
     text-align: center;
     user-select: none;
     -o-user-select: none;
+    -ms-user-select: none;
     -moz-user-select: none;
     -khtml-user-select: none;
     -webkit-user-select: none;
